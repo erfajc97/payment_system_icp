@@ -1,0 +1,6 @@
+{
+  "compiler": {
+    "base_path": "src/payment_system_backend",
+    "include_paths": ["src/payment_system_backend"]
+  }
+}

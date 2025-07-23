@@ -1,18 +1,34 @@
 {
-  "engines": {
-    "node": ">=16.0.0",
-    "npm": ">=7.0.0"
-  },
-  "name": "mi_proyecto",
-  "scripts": {
-    "build": "npm run build --workspaces --if-present",
-    "prebuild": "npm run prebuild --workspaces --if-present",
-    "pretest": "npm run prebuild --workspaces --if-present",
-    "start": "npm start --workspaces --if-present",
-    "test": "npm test --workspaces --if-present"
-  },
-  "type": "module",
+  "name": "payment-system-icp",
+  "version": "1.0.0",
+  "description": "Sistema de Pagos Descentralizado con Internet Computer Protocol",
+  "main": "index.js",
   "workspaces": [
-    "src/mi_proyecto_frontend"
-  ]
+    "src/payment_system_frontend",
+    "src/landing_frontend"
+  ],
+  "scripts": {
+    "setup": "npm install && dfx canister create payment_system_backend && dfx generate payment_system_backend && dfx deploy",
+    "start": "dfx start --background",
+    "deploy": "dfx deploy",
+    "generate": "dfx generate",
+    "build": "dfx build",
+    "stop": "dfx stop"
+  },
+  "keywords": [
+    "icp",
+    "internet-computer",
+    "bitcoin",
+    "payments",
+    "decentralized",
+    "motoko",
+    "react",
+    "typescript"
+  ],
+  "author": "Tu Nombre",
+  "license": "MIT",
+  "devDependencies": {
+    "@dfinity/agent": "^2.1.3",
+    "@dfinity/candid": "^2.1.3"
+  }
 }

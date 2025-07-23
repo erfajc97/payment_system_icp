@@ -1,18 +1,18 @@
 {
   "canisters": {
-    "mi_proyecto_backend": {
-      "main": "src/mi_proyecto_backend/main.mo",
+    "payment_system_backend": {
+      "main": "src/payment_system_backend/main.mo",
       "type": "motoko"
     },
-    "mi_proyecto_frontend": {
-      "dependencies": [
-        "mi_proyecto_backend"
-      ],
-      "source": [
-        "src/mi_proyecto_frontend/dist"
-      ],
-      "type": "assets",
-      "workspace": "mi_proyecto_frontend"
+    "payment_system_frontend": {
+      "dependencies": ["payment_system_backend"],
+      "source": ["src/payment_system_frontend/dist"],
+      "type": "assets"
+    },
+    "landing_frontend": {
+      "dependencies": ["payment_system_backend"],
+      "source": ["src/landing_frontend/dist"],
+      "type": "assets"
     }
   },
   "defaults": {
