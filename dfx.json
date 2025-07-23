@@ -7,12 +7,14 @@
     "payment_system_frontend": {
       "dependencies": ["payment_system_backend"],
       "source": ["src/payment_system_frontend/dist"],
-      "type": "assets"
+      "type": "assets",
+      "build": []
     },
     "landing_frontend": {
       "dependencies": ["payment_system_backend"],
       "source": ["src/landing_frontend/dist"],
-      "type": "assets"
+      "type": "assets",
+      "build": []
     }
   },
   "defaults": {

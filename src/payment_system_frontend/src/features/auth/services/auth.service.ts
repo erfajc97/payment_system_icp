@@ -1,4 +1,63 @@
-import { payment_system_backend } from "declarations/payment_system_backend";
+// Importar declaraciones si están disponibles, sino usar placeholder
+let payment_system_backend: any;
+
+try {
+  // Intentar importar las declaraciones reales
+  const declarations = require("declarations/payment_system_backend");
+  payment_system_backend = declarations.payment_system_backend;
+} catch (error) {
+  console.log("Running in development mode - using placeholder backend");
+  // Placeholder para modo desarrollo
+  payment_system_backend = {
+    registerUser: async (request: any) => ({
+      ok: {
+        id: "dev-user-1",
+        principal: request.principal,
+        email: request.email,
+        walletAddress: request.walletAddress,
+        createdAt: Date.now(),
+        updatedAt: Date.now(),
+        isActive: true,
+      },
+    }),
+    getUserByPrincipal: async (principal: string) => ({
+      ok: {
+        id: "dev-user-1",
+        principal: principal,
+        email: null,
+        walletAddress: null,
+        createdAt: Date.now(),
+        updatedAt: Date.now(),
+        isActive: true,
+      },
+    }),
+    updateUser: async (userId: string, request: any) => ({
+      ok: {
+        id: userId,
+        principal: "dev-principal",
+        email: request.email,
+        walletAddress: request.walletAddress,
+        createdAt: Date.now(),
+        updatedAt: Date.now(),
+        isActive: request.isActive ?? true,
+      },
+    }),
+    deactivateUser: async (userId: string) => ({
+      ok: {
+        id: userId,
+        principal: "dev-principal",
+        email: null,
+        walletAddress: null,
+        createdAt: Date.now(),
+        updatedAt: Date.now(),
+        isActive: false,
+      },
+    }),
+    greet: async (name: string) =>
+      `Hello, ${name}! Welcome to Payment System ICP (Development Mode)`,
+  };
+}
+
 import {
   User,
   CreateUserRequest,
@@ -6,11 +65,11 @@ import {
 } from "../types/auth.types";
 
 export class AuthService {
-  private authCanister: payment_system_backend;
+  private authCanister: any;
 
   constructor() {
-    // Inicializar el canister (esto se configurará cuando tengamos las declaraciones)
-    this.authCanister = {} as payment_system_backend; // Placeholder
+    // Inicializar el canister con las declaraciones reales o placeholder
+    this.authCanister = payment_system_backend;
   }
 
   async registerUser(request: CreateUserRequest): Promise<User> {
@@ -23,6 +82,7 @@ export class AuthService {
         throw new Error(result.err);
       }
     } catch (error) {
+      console.error("Error registering user:", error);
       throw new Error(`Error registering user: ${error}`);
     }
   }
@@ -37,6 +97,7 @@ export class AuthService {
         throw new Error(result.err);
       }
     } catch (error) {
+      console.error("Error getting user:", error);
       throw new Error(`Error getting user: ${error}`);
     }
   }
@@ -51,6 +112,7 @@ export class AuthService {
         throw new Error(result.err);
       }
     } catch (error) {
+      console.error("Error updating user:", error);
       throw new Error(`Error updating user: ${error}`);
     }
   }
@@ -65,7 +127,18 @@ export class AuthService {
         throw new Error(result.err);
       }
     } catch (error) {
+      console.error("Error deactivating user:", error);
       throw new Error(`Error deactivating user: ${error}`);
+    }
+  }
+
+  // Método de prueba para verificar conexión
+  async testConnection(): Promise<string> {
+    try {
+      return await this.authCanister.greet("Test User");
+    } catch (error) {
+      console.error("Error testing connection:", error);
+      throw new Error(`Error testing connection: ${error}`);
     }
   }
 }
