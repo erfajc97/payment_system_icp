@@ -1,15 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { useAuth } from "../hooks/useAuth";
 
 export const LoginForm: React.FC = () => {
-  const [principal, setPrincipal] = useState("");
   const { login, isLoading, error } = useAuth();
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (principal.trim()) {
-      await login(principal.trim());
-    }
+  const handleLogin = async () => {
+    await login();
   };
 
   return (
@@ -37,50 +33,35 @@ export const LoginForm: React.FC = () => {
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <div>
-          <label
-            htmlFor="principal"
-            className="block text-sm font-semibold text-secondary-200 mb-2"
-          >
-            Principal ID
-          </label>
-          <div className="relative">
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <svg
-                className="h-5 w-5 text-secondary-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                />
-              </svg>
-            </div>
-            <input
-              type="text"
-              id="principal"
-              value={principal}
-              onChange={(e) => setPrincipal(e.target.value)}
-              placeholder="Ingresa tu Principal ID de Internet Identity"
-              disabled={isLoading}
-              required
-              className="w-full pl-10 pr-4 py-3 bg-secondary-700 border border-secondary-600 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all duration-200 text-white placeholder-secondary-400 disabled:bg-secondary-800 disabled:cursor-not-allowed"
-            />
+      <div className="space-y-6">
+        <div className="text-center">
+          <div className="w-16 h-16 bg-gradient-to-r from-red-600 to-red-700 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg
+              className="w-8 h-8 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+              />
+            </svg>
           </div>
-          <p className="mt-2 text-xs text-secondary-400">
-            Tu Principal ID es tu identidad única en Internet Computer
+          <h3 className="text-lg font-semibold text-white mb-2">
+            Conectar con Internet Identity
+          </h3>
+          <p className="text-secondary-300 text-sm">
+            Accede de forma segura usando tu identidad descentralizada
           </p>
         </div>
 
         <button
-          type="submit"
-          disabled={isLoading || !principal.trim()}
-          className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 disabled:from-secondary-600 disabled:to-secondary-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 disabled:transform-none disabled:cursor-not-allowed shadow-medium flex items-center justify-center"
+          onClick={handleLogin}
+          disabled={isLoading}
+          className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 disabled:from-secondary-600 disabled:to-secondary-700 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 disabled:transform-none disabled:cursor-not-allowed shadow-medium flex items-center justify-center"
         >
           {isLoading ? (
             <>
@@ -121,11 +102,11 @@ export const LoginForm: React.FC = () => {
                   d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
                 />
               </svg>
-              Iniciar Sesión
+              Conectar con Internet Identity
             </>
           )}
         </button>
-      </form>
+      </div>
 
       <div className="mt-8 p-4 bg-gradient-to-r from-red-900/30 to-red-800/30 border border-red-700/50 rounded-xl">
         <div className="flex items-start">
@@ -144,12 +125,12 @@ export const LoginForm: React.FC = () => {
           </div>
           <div className="ml-3">
             <h4 className="text-sm font-semibold text-red-200 mb-1">
-              ¿No tienes Internet Identity?
+              ¿Qué es Internet Identity?
             </h4>
             <p className="text-sm text-secondary-300">
-              Para una integración completa, necesitarás configurar Internet
-              Identity. Por ahora puedes usar cualquier Principal ID para probar
-              el sistema.
+              Internet Identity es el sistema de autenticación descentralizado
+              de Internet Computer. Te permite acceder a aplicaciones web3 de
+              forma segura sin contraseñas tradicionales.
             </p>
           </div>
         </div>

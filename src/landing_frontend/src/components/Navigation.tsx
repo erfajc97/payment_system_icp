@@ -3,13 +3,11 @@ import { Link, useLocation } from "react-router-dom";
 import { useScrollToSection } from "../hooks/useScrollToSection";
 
 interface NavigationProps {
-  onLogin: () => void;
   onGetStarted: () => void;
   currentPath?: string;
 }
 
 export const Navigation: React.FC<NavigationProps> = ({
-  onLogin,
   onGetStarted,
   currentPath = "/",
 }) => {
@@ -82,12 +80,6 @@ export const Navigation: React.FC<NavigationProps> = ({
           {/* Desktop Buttons */}
           <div className="hidden md:flex items-center space-x-4">
             <button
-              onClick={onLogin}
-              className="text-secondary-300 hover:text-red-400 transition-colors font-medium"
-            >
-              Iniciar Sesión
-            </button>
-            <button
               onClick={onGetStarted}
               className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-semibold py-2 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-medium"
             >
@@ -155,15 +147,6 @@ export const Navigation: React.FC<NavigationProps> = ({
                 Contacto
               </Link>
               <div className="border-t border-secondary-700 mt-3 pt-3 space-y-2">
-                <button
-                  onClick={() => {
-                    onLogin();
-                    closeMobileMenu();
-                  }}
-                  className="block w-full text-left px-3 py-2 text-secondary-300 hover:text-red-400 transition-colors font-medium"
-                >
-                  Iniciar Sesión
-                </button>
                 <button
                   onClick={() => {
                     onGetStarted();

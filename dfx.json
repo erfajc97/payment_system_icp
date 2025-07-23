@@ -8,13 +8,15 @@
       "dependencies": ["payment_system_backend"],
       "source": ["src/payment_system_frontend/dist"],
       "type": "assets",
-      "build": []
+      "build": [
+        "cd src/payment_system_frontend && npm install && npm run build"
+      ]
     },
     "landing_frontend": {
       "dependencies": ["payment_system_backend"],
       "source": ["src/landing_frontend/dist"],
       "type": "assets",
-      "build": []
+      "build": ["cd src/landing_frontend && npm install && npm run build"]
     }
   },
   "defaults": {

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, createContext, useContext } from "react";
 import { authService } from "../services/auth.service";
+import { internetIdentityService } from "../../../services/internet-identity.service";
 import {
   CreateUserRequest,
   UpdateUserRequest,
@@ -27,33 +28,42 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     error: null,
   });
 
-  const login = async (principal: string) => {
+  const login = async () => {
     try {
       setState((prev) => ({ ...prev, isLoading: true, error: null }));
 
-      const user = await authService.getUserByPrincipal(principal);
+      // Initialize Internet Identity service
+      await internetIdentityService.initialize();
 
-      if (user) {
-        setState({
-          user,
-          isAuthenticated: true,
-          isLoading: false,
-          error: null,
-        });
-      } else {
-        // Si el usuario no existe, lo registramos
-        const newUser = await authService.registerUser({
-          principal,
-          email: undefined,
-          walletAddress: undefined,
-        });
+      // Perform login with Internet Identity
+      const authState = await internetIdentityService.login();
 
-        setState({
-          user: newUser,
-          isAuthenticated: true,
-          isLoading: false,
-          error: null,
-        });
+      if (authState.isAuthenticated && authState.principal) {
+        // Try to get existing user
+        const user = await authService.getUserByPrincipal(authState.principal);
+
+        if (user) {
+          setState({
+            user,
+            isAuthenticated: true,
+            isLoading: false,
+            error: null,
+          });
+        } else {
+          // If user doesn't exist, register them
+          const newUser = await authService.registerUser({
+            principal: authState.principal,
+            email: undefined,
+            walletAddress: undefined,
+          });
+
+          setState({
+            user: newUser,
+            isAuthenticated: true,
+            isLoading: false,
+            error: null,
+          });
+        }
       }
     } catch (error) {
       setState((prev) => ({
@@ -64,13 +74,25 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     }
   };
 
-  const logout = () => {
-    setState({
-      user: null,
-      isAuthenticated: false,
-      isLoading: false,
-      error: null,
-    });
+  const logout = async () => {
+    try {
+      await internetIdentityService.logout();
+      setState({
+        user: null,
+        isAuthenticated: false,
+        isLoading: false,
+        error: null,
+      });
+    } catch (error) {
+      console.error("Logout error:", error);
+      // Even if logout fails, clear local state
+      setState({
+        user: null,
+        isAuthenticated: false,
+        isLoading: false,
+        error: null,
+      });
+    }
   };
 
   const register = async (request: CreateUserRequest) => {
@@ -115,11 +137,45 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     }
   };
 
-  // Verificar autenticación al cargar
+  // Check authentication state on load
   useEffect(() => {
-    // Aquí podrías verificar si hay una sesión guardada
-    // Por ahora, simplemente marcamos como no autenticado
-    setState((prev) => ({ ...prev, isLoading: false }));
+    const checkAuthState = async () => {
+      try {
+        await internetIdentityService.initialize();
+        const authState = await internetIdentityService.checkAuthState();
+
+        if (authState.isAuthenticated && authState.principal) {
+          // Try to get existing user
+          const user = await authService.getUserByPrincipal(
+            authState.principal
+          );
+
+          if (user) {
+            setState({
+              user,
+              isAuthenticated: true,
+              isLoading: false,
+              error: null,
+            });
+          } else {
+            // User authenticated but not in our system
+            setState({
+              user: null,
+              isAuthenticated: false,
+              isLoading: false,
+              error: null,
+            });
+          }
+        } else {
+          setState((prev) => ({ ...prev, isLoading: false }));
+        }
+      } catch (error) {
+        console.error("Error checking auth state:", error);
+        setState((prev) => ({ ...prev, isLoading: false }));
+      }
+    };
+
+    checkAuthState();
   }, []);
 
   const value: AuthContextType = {

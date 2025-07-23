@@ -16,11 +16,6 @@ function App() {
     window.location.href = "http://localhost:3000";
   };
 
-  const handleLogin = () => {
-    // Redirigir al frontend principal
-    window.location.href = "http://localhost:3000";
-  };
-
   return (
     <Router>
       <div className="min-h-screen bg-gradient-to-br from-dark-900 via-secondary-900 to-dark-800">
@@ -29,10 +24,7 @@ function App() {
             path="/"
             element={
               <>
-                <Navigation
-                  onLogin={handleLogin}
-                  onGetStarted={handleGetStarted}
-                />
+                <Navigation onGetStarted={handleGetStarted} />
                 {/* Hero Section */}
                 <Hero />
 
