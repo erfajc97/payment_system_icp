@@ -16,20 +16,20 @@ export const Footer: React.FC = () => {
               <span className="text-xl font-bold">PayWeb3</span>
             </div>
             <p className="text-secondary-400">
-              Sistema de pagos descentralizado construido con tecnología
-              blockchain de vanguardia.
+              Decentralized payment system built with cutting-edge blockchain
+              technology.
             </p>
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4 text-white">Producto</h4>
+            <h4 className="font-semibold mb-4 text-white">Product</h4>
             <ul className="space-y-2 text-secondary-400">
               <li>
                 <Link
                   to="/#features"
                   className="hover:text-white transition-colors"
                 >
-                  Características
+                  Features
                 </Link>
               </li>
               <li>
@@ -39,18 +39,18 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a href="#" className="hover:text-white transition-colors">
-                  Documentación
+                  Documentation
                 </a>
               </li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4 text-white">Soporte</h4>
+            <h4 className="font-semibold mb-4 text-white">Support</h4>
             <ul className="space-y-2 text-secondary-400">
               <li>
                 <a href="#" className="hover:text-white transition-colors">
-                  Centro de Ayuda
+                  Help Center
                 </a>
               </li>
               <li>
@@ -58,17 +58,17 @@ export const Footer: React.FC = () => {
                   to="/contact"
                   className="hover:text-white transition-colors"
                 >
-                  Contacto
+                  Contact
                 </Link>
               </li>
               <li>
                 <a href="#" className="hover:text-white transition-colors">
-                  Estado del Sistema
+                  System Status
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-white transition-colors">
-                  Comunidad
+                  Community
                 </a>
               </li>
             </ul>
@@ -79,17 +79,17 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2 text-secondary-400">
               <li>
                 <a href="#" className="hover:text-white transition-colors">
-                  Privacidad
+                  Privacy
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-white transition-colors">
-                  Términos
+                  Terms
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-white transition-colors">
-                  Seguridad
+                  Security
                 </a>
               </li>
               <li>

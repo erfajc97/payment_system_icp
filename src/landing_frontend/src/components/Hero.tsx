@@ -30,7 +30,7 @@ export const Hero: React.FC = () => {
                 PayWeb3
                 <br />
                 <span className="text-red-400 text-2xl md:text-3xl">
-                  Sistema de Pagos Descentralizado
+                  Decentralized Payment System
                 </span>
               </h1>
             </div>
@@ -38,18 +38,18 @@ export const Hero: React.FC = () => {
 
           {/* Subtitle */}
           <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed">
-            Genera botones de pago, QR codes y recibe Bitcoin de forma segura y
-            descentralizada utilizando Internet Computer Protocol. Sin
-            intermediarios, sin comisiones ocultas.
+            Generate payment buttons, QR codes and receive Bitcoin securely and
+            decentrally using Internet Computer Protocol. No intermediaries, no
+            hidden fees.
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
             <button className="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg text-lg">
-              🚀 Comenzar Gratis
+              🚀 Start Free
             </button>
             <button className="border-2 border-red-600 text-white font-bold py-4 px-8 rounded-xl hover:bg-red-600 hover:text-white transition-all duration-200 text-lg">
-              📖 Ver Documentación
+              📖 View Documentation
             </button>
           </div>
 
@@ -59,19 +59,19 @@ export const Hero: React.FC = () => {
               <div className="text-3xl md:text-4xl font-bold text-white mb-2">
                 2%
               </div>
-              <div className="text-gray-300">Comisiones</div>
+              <div className="text-gray-300">Fees</div>
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-white mb-2">
                 100%
               </div>
-              <div className="text-gray-300">Descentralizado</div>
+              <div className="text-gray-300">Decentralized</div>
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-white mb-2">
                 ∞
               </div>
-              <div className="text-gray-300">Escalabilidad</div>
+              <div className="text-gray-300">Scalability</div>
             </div>
           </div>
         </div>

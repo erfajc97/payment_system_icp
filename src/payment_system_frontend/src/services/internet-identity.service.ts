@@ -13,7 +13,12 @@ class InternetIdentityService {
 
   async initialize(): Promise<void> {
     try {
-      this.authClient = await AuthClient.create();
+      this.authClient = await AuthClient.create({
+        idleOptions: {
+          disableDefaultIdleCallback: true,
+          disableIdle: true,
+        },
+      });
       console.log("AuthClient initialized");
     } catch (error) {
       console.error("Error initializing AuthClient:", error);
@@ -29,6 +34,7 @@ class InternetIdentityService {
     return new Promise((resolve, reject) => {
       this.authClient!.login({
         identityProvider: "https://identity.ic0.app",
+        maxTimeToLive: BigInt(7 * 24 * 60 * 60 * 1000 * 1000 * 1000), // 7 days
         onSuccess: async () => {
           try {
             const identity = this.authClient!.getIdentity();

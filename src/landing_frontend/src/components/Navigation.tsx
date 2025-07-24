@@ -57,13 +57,13 @@ export const Navigation: React.FC<NavigationProps> = ({
               onClick={() => handleSectionClick("features")}
               className="text-secondary-300 hover:text-red-400 transition-colors"
             >
-              Características
+              Features
             </button>
             <button
               onClick={() => handleSectionClick("how-it-works")}
               className="text-secondary-300 hover:text-red-400 transition-colors"
             >
-              Cómo Funciona
+              How It Works
             </button>
             <Link
               to="/contact"
@@ -73,7 +73,7 @@ export const Navigation: React.FC<NavigationProps> = ({
                   : "text-secondary-300 hover:text-red-400"
               }`}
             >
-              Contacto
+              Contact
             </Link>
           </div>
 
@@ -83,7 +83,7 @@ export const Navigation: React.FC<NavigationProps> = ({
               onClick={onGetStarted}
               className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-semibold py-2 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-medium"
             >
-              Comenzar
+              Get Started
             </button>
           </div>
 
@@ -127,13 +127,13 @@ export const Navigation: React.FC<NavigationProps> = ({
                 onClick={() => handleSectionClick("features")}
                 className="block w-full text-left px-3 py-2 text-secondary-300 hover:text-red-400 transition-colors"
               >
-                Características
+                Features
               </button>
               <button
                 onClick={() => handleSectionClick("how-it-works")}
                 className="block w-full text-left px-3 py-2 text-secondary-300 hover:text-red-400 transition-colors"
               >
-                Cómo Funciona
+                How It Works
               </button>
               <Link
                 to="/contact"
@@ -144,7 +144,7 @@ export const Navigation: React.FC<NavigationProps> = ({
                 }`}
                 onClick={closeMobileMenu}
               >
-                Contacto
+                Contact
               </Link>
               <div className="border-t border-secondary-700 mt-3 pt-3 space-y-2">
                 <button
@@ -154,7 +154,7 @@ export const Navigation: React.FC<NavigationProps> = ({
                   }}
                   className="block w-full text-left px-3 py-2 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-colors"
                 >
-                  Comenzar
+                  Get Started
                 </button>
               </div>
             </div>

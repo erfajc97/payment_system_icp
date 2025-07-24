@@ -51,10 +51,10 @@ export const LoginForm: React.FC = () => {
             </svg>
           </div>
           <h3 className="text-lg font-semibold text-white mb-2">
-            Conectar con Internet Identity
+            Connect with Internet Identity
           </h3>
           <p className="text-secondary-300 text-sm">
-            Accede de forma segura usando tu identidad descentralizada
+            Access securely using your decentralized identity
           </p>
         </div>
 
@@ -85,7 +85,7 @@ export const LoginForm: React.FC = () => {
                   d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                 ></path>
               </svg>
-              Conectando...
+              Connecting...
             </>
           ) : (
             <>
@@ -102,7 +102,7 @@ export const LoginForm: React.FC = () => {
                   d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
                 />
               </svg>
-              Conectar con Internet Identity
+              Connect with Internet Identity
             </>
           )}
         </button>
@@ -125,12 +125,12 @@ export const LoginForm: React.FC = () => {
           </div>
           <div className="ml-3">
             <h4 className="text-sm font-semibold text-red-200 mb-1">
-              ¿Qué es Internet Identity?
+              What is Internet Identity?
             </h4>
             <p className="text-sm text-secondary-300">
-              Internet Identity es el sistema de autenticación descentralizado
-              de Internet Computer. Te permite acceder a aplicaciones web3 de
-              forma segura sin contraseñas tradicionales.
+              Internet Identity is the decentralized authentication system of
+              Internet Computer. It allows you to access web3 applications
+              securely without traditional passwords.
             </p>
           </div>
         </div>

@@ -17,11 +17,11 @@ const ContactPage: React.FC = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Contacto
+              Contact
             </h1>
             <p className="text-xl text-secondary-300 max-w-2xl mx-auto">
-              ¿Tienes preguntas sobre nuestro sistema de pagos descentralizado?
-              Estamos aquí para ayudarte.
+              Do you have questions about our decentralized payment system?
+              We're here to help you.
             </p>
           </div>
 
@@ -29,7 +29,7 @@ const ContactPage: React.FC = () => {
             {/* Contact Form */}
             <div className="bg-secondary-800 rounded-2xl shadow-soft p-8 border border-secondary-700">
               <h2 className="text-2xl font-bold text-white mb-6">
-                Envíanos un mensaje
+                Send us a message
               </h2>
               <form className="space-y-6">
                 <div>
@@ -37,14 +37,14 @@ const ContactPage: React.FC = () => {
                     htmlFor="name"
                     className="block text-sm font-semibold text-secondary-200 mb-2"
                   >
-                    Nombre completo
+                    Full Name
                   </label>
                   <input
                     type="text"
                     id="name"
                     name="name"
                     className="w-full px-4 py-3 bg-secondary-700 border border-secondary-600 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all duration-200 text-white placeholder-secondary-400"
-                    placeholder="Tu nombre completo"
+                    placeholder="Your full name"
                     required
                   />
                 </div>
@@ -71,7 +71,7 @@ const ContactPage: React.FC = () => {
                     htmlFor="subject"
                     className="block text-sm font-semibold text-secondary-200 mb-2"
                   >
-                    Asunto
+                    Subject
                   </label>
                   <select
                     id="subject"
@@ -79,11 +79,11 @@ const ContactPage: React.FC = () => {
                     className="w-full px-4 py-3 bg-secondary-700 border border-secondary-600 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all duration-200 text-white"
                     required
                   >
-                    <option value="">Selecciona un asunto</option>
-                    <option value="support">Soporte técnico</option>
-                    <option value="business">Consultas comerciales</option>
-                    <option value="partnership">Alianzas estratégicas</option>
-                    <option value="other">Otro</option>
+                    <option value="">Select a subject</option>
+                    <option value="support">Technical support</option>
+                    <option value="business">Business inquiries</option>
+                    <option value="partnership">Strategic partnerships</option>
+                    <option value="other">Other</option>
                   </select>
                 </div>
 
@@ -92,7 +92,7 @@ const ContactPage: React.FC = () => {
                     htmlFor="message"
                     className="block text-sm font-semibold text-secondary-200 mb-2"
                   >
-                    Mensaje
+                    Message
                   </label>
                   <textarea
                     id="message"

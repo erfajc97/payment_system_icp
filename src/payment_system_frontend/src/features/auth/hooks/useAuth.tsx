@@ -66,10 +66,24 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
         }
       }
     } catch (error) {
+      console.error("Login error details:", error);
+
+      let errorMessage = "Login failed";
+      if (error instanceof Error) {
+        if (error.message.includes("NotAllowedError")) {
+          errorMessage =
+            "Autenticación cancelada o no permitida. Asegúrate de estar usando HTTPS y un navegador compatible.";
+        } else if (error.message.includes("UserRejected")) {
+          errorMessage = "Autenticación rechazada por el usuario.";
+        } else {
+          errorMessage = error.message;
+        }
+      }
+
       setState((prev) => ({
         ...prev,
         isLoading: false,
-        error: error instanceof Error ? error.message : "Login failed",
+        error: errorMessage,
       }));
     }
   };

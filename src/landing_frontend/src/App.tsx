@@ -33,11 +33,11 @@ function App() {
                   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
                       <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                        Características Principales
+                        Key Features
                       </h2>
                       <p className="text-xl text-secondary-300 max-w-3xl mx-auto">
-                        Todo lo que necesitas para aceptar pagos Bitcoin de
-                        forma descentralizada y segura
+                        Everything you need to accept Bitcoin payments
+                        decentrally and securely
                       </p>
                     </div>
 
@@ -59,11 +59,11 @@ function App() {
                           </svg>
                         </div>
                         <h3 className="text-xl font-bold text-white mb-4">
-                          Autenticación Segura
+                          Secure Authentication
                         </h3>
                         <p className="text-secondary-300">
-                          Internet Identity para máxima seguridad y privacidad.
-                          Sin contraseñas, sin problemas.
+                          Internet Identity for maximum security and privacy. No
+                          passwords, no problems.
                         </p>
                       </div>
 
@@ -84,11 +84,11 @@ function App() {
                           </svg>
                         </div>
                         <h3 className="text-xl font-bold text-white mb-4">
-                          Pagos Bitcoin Nativos
+                          Native Bitcoin Payments
                         </h3>
                         <p className="text-secondary-300">
-                          Transacciones Bitcoin directas sin intermediarios.
-                          Rápido, seguro y descentralizado.
+                          Direct Bitcoin transactions without intermediaries.
+                          Fast, secure and decentralized.
                         </p>
                       </div>
 
@@ -109,11 +109,11 @@ function App() {
                           </svg>
                         </div>
                         <h3 className="text-xl font-bold text-white mb-4">
-                          100% Descentralizado
+                          100% Decentralized
                         </h3>
                         <p className="text-secondary-300">
-                          Basado en Internet Computer Protocol. Sin servidores
-                          centrales, sin puntos de falla.
+                          Based on Internet Computer Protocol. No central
+                          servers, no single points of failure.
                         </p>
                       </div>
                     </div>
@@ -125,11 +125,11 @@ function App() {
                   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
                       <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                        ¿Cómo Funciona?
+                        How It Works?
                       </h2>
                       <p className="text-xl text-secondary-300 max-w-3xl mx-auto">
-                        En solo 3 pasos simples puedes comenzar a recibir pagos
-                        Bitcoin
+                        In just 3 simple steps you can start receiving Bitcoin
+                        payments
                       </p>
                     </div>
 
@@ -139,11 +139,11 @@ function App() {
                           1
                         </div>
                         <h3 className="text-xl font-bold text-white mb-4">
-                          Conecta tu Wallet
+                          Connect your Wallet
                         </h3>
                         <p className="text-secondary-300">
-                          Registra tu comercio y conecta tu wallet Bitcoin para
-                          recibir pagos
+                          Register your business and connect your Bitcoin wallet
+                          to receive payments
                         </p>
                       </div>
 
@@ -152,11 +152,11 @@ function App() {
                           2
                         </div>
                         <h3 className="text-xl font-bold text-white mb-4">
-                          Genera Botones
+                          Generate Buttons
                         </h3>
                         <p className="text-secondary-300">
-                          Crea botones de pago personalizados con QR codes y
-                          links únicos
+                          Create personalized payment buttons with QR codes and
+                          unique links
                         </p>
                       </div>
 
@@ -165,11 +165,11 @@ function App() {
                           3
                         </div>
                         <h3 className="text-xl font-bold text-white mb-4">
-                          Recibe Pagos
+                          Receive Payments
                         </h3>
                         <p className="text-secondary-300">
-                          Los clientes pagan y recibes Bitcoin directamente en
-                          tu wallet
+                          Customers pay and you receive Bitcoin directly in your
+                          wallet
                         </p>
                       </div>
                     </div>
@@ -180,24 +180,24 @@ function App() {
                 <section className="py-20 bg-gradient-to-r from-gray-800 to-gray-900">
                   <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                      ¿Listo para Comenzar?
+                      Ready to Start?
                     </h2>
                     <p className="text-xl text-gray-300 mb-8">
-                      Únete a la revolución de los pagos descentralizados. Es
-                      gratis y solo toma 2 minutos.
+                      Join the decentralized payments revolution. It's free and
+                      only takes 2 minutes.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                       <button
                         onClick={handleGetStarted}
                         className="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-8 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-medium"
                       >
-                        Crear Cuenta Gratis
+                        Create Free Account
                       </button>
                       <button
                         onClick={handleViewDemo}
                         className="border-2 border-red-600 text-white font-semibold py-3 px-8 rounded-xl hover:bg-red-600 hover:text-white transition-all duration-200"
                       >
-                        Ver Demo
+                        View Demo
                       </button>
                     </div>
                   </div>
