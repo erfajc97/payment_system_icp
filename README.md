@@ -361,7 +361,10 @@ If you have problems or questions:
 - [React Documentation](https://react.dev)
 
 ---
-
+## 🔗 Links Deployed
+- [Landing page](https://27lhq-7iaaa-aaaaj-qnrwa-cai.icp0.io/) 
+- [Dashboard](https://2kmw5-6aaaa-aaaaj-qnrvq-cai.icp0.io/) 
+- [Backend](https://a4gq6-oaaaa-aaaab-qaa4q-cai.raw.icp0.io/?id=2nnqj-tyaaa-aaaaj-qnrva-cai)                                                                                                 
 **Built with ❤️ using Internet Computer Protocol!**
 
 **PayWeb3** - Decentralized Payment System

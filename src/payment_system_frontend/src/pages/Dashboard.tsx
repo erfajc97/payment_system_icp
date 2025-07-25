@@ -20,7 +20,7 @@ const Dashboard: React.FC = () => {
             </div>
             <div className="text-right">
               <p className="text-sm text-gray-300">Welcome back!</p>
-              <p className="text-white font-semibold">User Dashboard</p>
+              {/* <p className="text-white font-semibold">User Dashboard</p> */}
             </div>
           </div>
         </div>

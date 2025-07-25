@@ -8,12 +8,12 @@ import "./App.css";
 function App() {
   const handleGetStarted = () => {
     // Redirigir al frontend principal
-    window.location.href = "http://localhost:3000";
+    window.location.href = "https://2kmw5-6aaaa-aaaaj-qnrvq-cai.icp0.io/";
   };
 
   const handleViewDemo = () => {
     // También redirigir al frontend principal
-    window.location.href = "http://localhost:3000";
+    window.location.href = "https://2kmw5-6aaaa-aaaaj-qnrvq-cai.icp0.io/";
   };
 
   return (

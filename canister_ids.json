@@ -1,0 +1,11 @@
+{
+  "landing_frontend": {
+    "ic": "27lhq-7iaaa-aaaaj-qnrwa-cai"
+  },
+  "payment_system_backend": {
+    "ic": "2nnqj-tyaaa-aaaaj-qnrva-cai"
+  },
+  "payment_system_frontend": {
+    "ic": "2kmw5-6aaaa-aaaaj-qnrvq-cai"
+  }
+}
