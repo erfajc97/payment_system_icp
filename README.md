@@ -2,6 +2,15 @@
 
 A modern decentralized payment button generation system using **Internet Computer Protocol (ICP)** and **native Bitcoin**.
 
+---
+
+## 🔗 Links Deployed
+- [Landing page](https://27lhq-7iaaa-aaaaj-qnrwa-cai.icp0.io/) 
+- [Dashboard](https://2kmw5-6aaaa-aaaaj-qnrvq-cai.icp0.io/) 
+- [Backend](https://a4gq6-oaaaa-aaaab-qaa4q-cai.raw.icp0.io/?id=2nnqj-tyaaa-aaaaj-qnrva-cai)   
+
+---
+
 ## 🎯 Features
 
 - ✅ **Clean Architecture** with layer separation
@@ -55,8 +64,8 @@ dfx --version
 #### 2. Clone and Setup Project
 ```bash
 # Clone the repository
-git clone <repository-url>
-cd payweb3
+git clone https://github.com/erfajc97/payment_system_icp
+cd payment_system_icp
 
 # Install dependencies
 npm install
@@ -81,8 +90,6 @@ dfx deploy
 ```
 
 #### 5. Access Applications
-- **Main Frontend**: `http://localhost:4943/?canisterId=<CANISTER_ID>`
-- **Landing Page**: `http://localhost:4943/?canisterId=<CANISTER_ID>`
 
 Get the canister IDs with:
 ```bash
@@ -93,30 +100,6 @@ dfx canister id payment_system_backend
 
 **Note**: After deployment, you can update your `.env` file with the actual canister IDs for easier access.
 
-## 🔧 Environment Configuration
-
-### Environment Variables (.env)
-
-The project uses environment variables for configuration. Copy `env.example` to `.env` and configure as needed:
-
-```bash
-# Copy the example file
-cp env.example .env
-```
-
-#### Key Environment Variables:
-
-- **`DFX_NETWORK`**: Set to `local` for development, `ic` for mainnet
-- **`INTERNET_IDENTITY_URL`**: Internet Identity service URL
-- **`VITE_HTTPS_ENABLED`**: Enable HTTPS for local development (required for II)
-- **`VITE_MAIN_FRONTEND_PORT`**: Port for main frontend (default: 3000)
-- **`VITE_LANDING_FRONTEND_PORT`**: Port for landing page (default: 3001)
-
-#### Canister IDs:
-The following variables are automatically populated by `dfx deploy`:
-- `PAYMENT_SYSTEM_BACKEND_CANISTER_ID`
-- `PAYMENT_SYSTEM_FRONTEND_CANISTER_ID`
-- `LANDING_FRONTEND_CANISTER_ID`
 
 #### Development vs Production:
 - **Local Development**: Uses local Internet Identity and canisters
@@ -249,7 +232,7 @@ dfx generate           # Generate TypeScript declarations
 dfx start              # Start local environment
 ```
 
-## 📝 Project Status
+## 📝 Project Status - Roadmap
 
 ### ✅ Completed
 - [x] Clean Architecture implementation
@@ -299,7 +282,7 @@ The system uses **Internet Identity** for decentralized authentication:
 - **Purpose**: Marketing and information
 - **Features**: Product information, contact
 - **URL**: Port 3001 (development)
-- **Navigation**: No login button (redirects to main)
+- **Navigation**: redirects to main
 
 ## 🚀 Deployment
 
@@ -361,10 +344,7 @@ If you have problems or questions:
 - [React Documentation](https://react.dev)
 
 ---
-## 🔗 Links Deployed
-- [Landing page](https://27lhq-7iaaa-aaaaj-qnrwa-cai.icp0.io/) 
-- [Dashboard](https://2kmw5-6aaaa-aaaaj-qnrvq-cai.icp0.io/) 
-- [Backend](https://a4gq6-oaaaa-aaaab-qaa4q-cai.raw.icp0.io/?id=2nnqj-tyaaa-aaaaj-qnrva-cai)                                                                                                 
+
 **Built with ❤️ using Internet Computer Protocol!**
 
 **PayWeb3** - Decentralized Payment System
